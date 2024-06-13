@@ -4,7 +4,7 @@ public class MenuHelper {
 
     public static void displayMainMenu() {
         printLineSeparator();
-        System.out.println("--- LockedMe.com ---");
+        System.out.println("		---* LockedMe.com *---");
         System.out.println("1. List Files");
         System.out.println("2. File Operations");
         System.out.println("3. Exit");
@@ -13,7 +13,7 @@ public class MenuHelper {
 
     public static void displayFileMenu() {
         printLineSeparator();
-        System.out.println("--- File Operations ---");
+        System.out.println("		--- File Operations ---");
         System.out.println("1. Add a File");
         System.out.println("2. Delete a File");
         System.out.println("3. Search a File");
