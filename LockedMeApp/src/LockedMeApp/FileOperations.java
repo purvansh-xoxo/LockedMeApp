@@ -62,25 +62,42 @@ public class FileOperations {
 
     public void deleteFile(String fileName) {
         if (!isValidFileName(fileName)) {
-            System.out.println("Invalid file name. Please provide a valid name.");
+            System.out.println("File not found!");
             return;
         }
 
-        File file = new File(directoryPath + File.separator + fileName);
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("File " + fileName + " deleted successfully.");
-            } else {
-                System.out.println("An error occurred while deleting the file.");
+        File directory = new File(directoryPath);
+        String[] files = directory.list();
+
+        if (files == null || files.length == 0) {
+            System.out.println("No files available to delete.");
+            return;
+        }
+
+        // Case-sensitive file deletion
+        boolean fileDeleted = false;
+        for (String file : files) {
+            if (file.equals(fileName)) {
+                File fileToDelete = new File(directoryPath + File.separator + fileName);
+                if (fileToDelete.delete()) {
+                    System.out.println("File " + fileName + " deleted successfully.");
+                    fileDeleted = true;
+                    break;
+                } else {
+                    System.out.println("An error occurred while deleting the file.");
+                }
             }
-        } else {
+        }
+
+        if (!fileDeleted) {
             System.out.println("File " + fileName + " not found.");
         }
     }
 
+
     public void searchFile(String fileName) {
         if (!isValidFileName(fileName)) {
-            System.out.println("Invalid file name. Please provide a valid name.");
+            System.out.println("File not found!");
             return;
         }
 
