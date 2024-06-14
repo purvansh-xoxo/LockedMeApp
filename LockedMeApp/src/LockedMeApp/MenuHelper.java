@@ -6,7 +6,8 @@ public class MenuHelper {
         printLineSeparator();
         System.out.println("		---* LockedMe.com *---");
         System.out.println("Welcome to LockedMe");
-        System.out.println("Developer : Purvansh Narang\n");
+        System.out.println("Developer : Purvansh Narang");
+        System.out.println("Company : Company Lockers Pvt. Ltd.\n");
         System.out.println("1. List Files (ascending order)");
         System.out.println("2. Business File Operations");
         System.out.println("3. Exit");
